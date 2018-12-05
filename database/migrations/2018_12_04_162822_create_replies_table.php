@@ -17,10 +17,9 @@ class CreateRepliesTable extends Migration
             $table->increments('id');
             $table->text('body');
             $table->integer('question_id')->unsigned();
-            $table->increments('user_id')->unsigned();
-            $table->increments('question_id')->references('id')->on('questions')
-            ->OnDelete('cascade');
-            $table->increments('id');
+            $table->integer('user_id');
+            $table->foreign('question_id')->references('id')->on('questions')
+           ->OnDelete('cascade');
             $table->timestamps();
         });
     }

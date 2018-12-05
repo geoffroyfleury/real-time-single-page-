@@ -1,0 +1,28 @@
+<?php
+
+namespace App;
+
+use App\Model\Question;
+use Illuminate\Database\Eloquent\Model;
+
+class Like extends Model
+{
+
+    public function like()
+    {
+        return $this->belongsTo(Like::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+
+
+
+    }
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
+}
