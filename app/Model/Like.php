@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
-use App\Model\Question;
+
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
@@ -10,14 +11,14 @@ class Like extends Model
 
     public function like()
     {
+
         return $this->belongsTo(Like::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
 
-
+      return $this->belongsTo(User::class);
 
     }
 
